@@ -1,4 +1,4 @@
-
+import Header from './Components/Header.jsx'
 
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <h1>hello react</h1>
+      <Header />
     </>
   )
 }
