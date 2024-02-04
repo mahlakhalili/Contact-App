@@ -1,4 +1,5 @@
-import Header from './Components/Header.jsx'
+import Header from './Components/Header.jsx';
+import Contact from './Components/Contact.jsx';
 
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
   return (
     <>
       <Header />
+      <Contact />
     </>
   )
 }
