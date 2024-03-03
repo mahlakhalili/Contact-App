@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 
 import ContactsList from "./ContactsList";
+import inputs from "../Constants/inputs";
 
 function Contact(){
 
-    const inputs = [
-                        {type:"text" , name : "name" , placeholder:"Name"},
-                        {type:"text" , name : "name" , placeholder:"Name"},
-                        {type:"text" , name : "name" , placeholder:"Name"},
-                        {type:"text" , name : "name" , placeholder:"Name"}
-                    ]
+   
 
     const [contacts , setContacts] = useState([])
 
@@ -51,6 +47,16 @@ function Contact(){
 
     return(
             <div>
+                {  
+                  inputs.map((input , index) =>(
+                  <input 
+                        key         = {index}
+                        type        = {input.type}
+                        placeholder = {input.placeholder}
+                        name        = {input.name}
+                        value       = {contact[input.name]}
+                        onChange    = {ChangeHandler}
+                    />))}
                 <div>
                     <input
                         type="text" 
