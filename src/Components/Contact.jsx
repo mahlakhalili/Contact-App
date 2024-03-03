@@ -4,6 +4,13 @@ import ContactsList from "./ContactsList";
 
 function Contact(){
 
+    const inputs = [
+                        {type:"text" , name : "name" , placeholder:"Name"},
+                        {type:"text" , name : "name" , placeholder:"Name"},
+                        {type:"text" , name : "name" , placeholder:"Name"},
+                        {type:"text" , name : "name" , placeholder:"Name"}
+                    ]
+
     const [contacts , setContacts] = useState([])
 
     const[contact , setContact] = useState({
@@ -27,10 +34,11 @@ function Contact(){
             !contact.name || 
             !contact.lastName || 
             !contact.email || 
-            !contact.phone) {
+            !contact.phone
+            ) {
             setAlert("Please enter valid data!")
             return;
-        }
+            }
         setAlert("")
         setContacts(contacts =>([...contacts , contact]));
         setContact({
