@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import ContactsList from "./ContactsList";
 import inputs from "../Constants/inputs";
+import { v4 } from "uuid";
 
 function Contact(){
 
@@ -36,8 +37,10 @@ function Contact(){
             return;
             }
         setAlert("")
-        setContacts(contacts =>([...contacts , contact]));
+        const newContact = {...Contact , id:v4()}
+        setContacts(contacts =>([...contacts , newContact]));
         setContact({
+            id       : "",
             name     : "",
             lastName : "" , 
             email    : "" , 
@@ -47,6 +50,7 @@ function Contact(){
 
     return(
             <div>
+                <div>
                 {  
                   inputs.map((input , index) =>(
                   <input 
@@ -57,31 +61,9 @@ function Contact(){
                         value       = {contact[input.name]}
                         onChange    = {ChangeHandler}
                     />))}
+                </div>
                 <div>
-                    <input
-                        type="text" 
-                        placeholder="Name" 
-                        name="name"
-                        value={contact.name} 
-                        onChange={ChangeHandler} />
-                    <input 
-                        type="text" 
-                        placeholder="Last Name" 
-                        name="lastName"
-                        value={contact.lastName} 
-                        onChange={ChangeHandler}/>
-                    <input 
-                        type="email" 
-                        placeholder="Email" 
-                        name="email"
-                        value={contact.email} 
-                        onChange={ChangeHandler} />
-                    <input 
-                        type="number" 
-                        placeholder="Phone" 
-                        name="phone"
-                        value={contact.phone} 
-                        onChange={ChangeHandler}/>
+                    
                     <button onClick={addHandler}>Add Contact</button>
                 </div>
                 <div>
