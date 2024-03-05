@@ -1,6 +1,6 @@
 import React from "react";
 
-function ContactsList(contacts){
+function ContactsList({contacts}){
     return(
         <div>
             <h3>Contact List</h3>
