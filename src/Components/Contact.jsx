@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import ContactsList from "./ContactsList";
 import inputs from "../Constants/inputs";
 import { v4 } from "uuid";
+import styles from "./Contacts.module.css";
 
 function Contact(){
     const [contacts , setContacts] = useState([]);
@@ -46,9 +47,13 @@ function Contact(){
         })
     }
 
+    const deleteHandler = id => {
+        const newContacts = contacts.filter(contact => contact.id !== id)
+        setContacts(newContacts)
+    }
     return(
-            <div>
-                <div>
+            <div className = {styles.container}>
+                <div className = {styles.form}>
                 {  
                   inputs.map((input , index) =>(
                   <input 
@@ -62,12 +67,12 @@ function Contact(){
                 </div>
                 <div>
                     
-                    <button onClick={addHandler}>Add Contact</button>
+                    <button  onClick={addHandler}>Add Contact</button>
                 </div>
-                <div>
+                <div className = {styles.alert}>
                     {alert && <p>{alert}</p>}
                 </div>
-                <ContactsList contacts = {contacts} />
+                <ContactsList contacts = {contacts}  deleteHandler = {deleteHandler} />
             </div>
     )
 }
