@@ -5,10 +5,7 @@ import inputs from "../Constants/inputs";
 import { v4 } from "uuid";
 
 function Contact(){
-
-   
-
-    const [contacts , setContacts] = useState([])
+    const [contacts , setContacts] = useState([]);
 
     const[contact , setContact] = useState({
         name     : "",
@@ -32,12 +29,13 @@ function Contact(){
             !contact.lastName || 
             !contact.email || 
             !contact.phone
-            ) {
+        ) {
             setAlert("Please enter valid data!")
             return;
-            }
+        }
+    
         setAlert("")
-        const newContact = {...Contact , id:v4()}
+        const newContact = {...contact , id:v4()}
         setContacts(contacts =>([...contacts , newContact]));
         setContact({
             id       : "",
