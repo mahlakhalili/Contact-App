@@ -64,11 +64,9 @@ function Contact(){
                         value       = {contact[input.name]}
                         onChange    = {ChangeHandler}
                     />))}
-                </div>
-                <div>
-                    
                     <button  onClick={addHandler}>Add Contact</button>
                 </div>
+                
                 <div className = {styles.alert}>
                     {alert && <p>{alert}</p>}
                 </div>
