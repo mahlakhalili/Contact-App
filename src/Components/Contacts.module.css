@@ -33,8 +33,38 @@
     padding: 10px;
     margin: 10px 0; 
     cursor: pointer;
-     background-color: #304ffe;
+    background-color: #304ffe;
+    color: #fff;
     border: none;
     border-radius: 10px;
     font-size: 1rem;
+    transition: 0.2s all ease-in-out;
+}
+
+.form button:hover{
+    box-shadow: #0c2ad487 0px 7px 29px 0px;
+}
+
+.alert{
+    width: 100%;
+    height: 40px;
+    margin: 5px 0 25px;
+}
+
+.alert p{
+    background-color: #ffebee;
+    color: #f44336;
+    border-radius: 20px;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+@media (max-width :500px){
+    .form input{
+        width: 90%;
+    }
+    .form button{
+        width: 90%;
+    }
 }
